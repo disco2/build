@@ -1470,15 +1470,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage lokum nomaam bacon pizza lahmacun iskender
-lokum: otapackage
-nomaam: otapackage
-bacon: otapackage
-pizza: otapackage
-lahmacun: otapackage
-iskender: otapackage
-
-
+.PHONY: otapackage
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 
 endif    # recovery_fstab is defined
@@ -1495,9 +1487,7 @@ ifeq ($(TARGET_BUILD_TYPE),debug)
 endif
 name := $(name)-img-$(FILE_NAME_TAG)
 
-# INTERNAL_UPDATE_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
-
-INTERNAL_UPDATE_PACKAGE_TARGET := $(PRODUCT_OUT)/nomaam-$(NOMAAM_VERSION).zip
+INTERNAL_UPDATE_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
 
 $(INTERNAL_UPDATE_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	@echo "Package: $@"
