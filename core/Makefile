@@ -1468,7 +1468,8 @@ name := $(TARGET_PRODUCT)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   name := $(name)_debug
 endif
-name := disco-$(name)-$(shell date -u +%Y-%m-%d)
+
+name := $(ROM_VERSION)
 
 INTERNAL_OTA_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
 
